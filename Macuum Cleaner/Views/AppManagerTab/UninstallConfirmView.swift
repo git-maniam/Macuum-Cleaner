@@ -18,7 +18,7 @@ struct UninstallConfirmView: View {
             HStack {
                 Spacer()
                 Button("Cancel", role: .cancel) { model.showConfirm = false; model.pendingTargets = [] }.keyboardShortcut(.cancelAction)
-                Button("Move to Trash") { model.confirmUninstall() }.keyboardShortcut(.defaultAction)
+                Button("Move to Trash") { model.confirmUninstall() }.buttonStyle(.primaryAction(.red)).keyboardShortcut(.defaultAction)
             }
         }
         .padding(20).frame(width: 480)

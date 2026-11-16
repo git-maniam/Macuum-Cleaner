@@ -18,7 +18,7 @@ struct FullDiskAccessSheet: View {
             HStack {
                 Button("Open System Settings") { NSWorkspace.shared.open(FullDiskAccess.settingsURL) }
                 Spacer()
-                Button("Scan Without It", action: onContinue).keyboardShortcut(.defaultAction)
+                Button("Scan Without It", action: onContinue).buttonStyle(.primaryAction()).keyboardShortcut(.defaultAction)
             }
         }
         .padding(20)

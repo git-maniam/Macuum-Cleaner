@@ -62,17 +62,19 @@ struct FileListView: View {
     }
 
     private var header: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        HStack(spacing: 12) {
+            IconTile(symbol: category.symbol, tint: category.tint, size: 38)
+            VStack(alignment: .leading, spacing: 2) {
                 Text(category.displayName).font(.title3.bold())
-                Text(category.summary).font(.caption).foregroundStyle(.secondary)
+                Text(category.summary).font(.caption).foregroundStyle(.secondary).lineLimit(2)
             }
             Spacer()
             Button(allSelected ? "Deselect All" : "Select All") { model.setAll(!allSelected, in: category) }
+                .buttonStyle(.bordered).controlSize(.regular)
                 .disabled(selectableFiles.isEmpty)
                 .accessibilityLabel(allSelected ? "Deselect all files" : "Select all files")
         }
-        .padding(10)
+        .padding(14)
     }
 
     private func icon(for file: JunkFile) -> NSImage {

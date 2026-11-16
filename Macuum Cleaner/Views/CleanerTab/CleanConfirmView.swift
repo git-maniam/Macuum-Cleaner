@@ -36,6 +36,7 @@ struct CleanConfirmView: View {
                     HStack {
                         Button("Back") { confirmingPermanent = false }
                         Button("Yes, Delete Permanently", role: .destructive) { model.clean(method: .permanentDelete) }
+                            .buttonStyle(.primaryAction(.red))
                     }
                 }
             } else {
@@ -47,7 +48,7 @@ struct CleanConfirmView: View {
                             .accessibilityHint("Requires a second confirmation")
                     }
                     Button("Move to Trash") { model.clean(method: .moveToTrash) }
-                        .keyboardShortcut(.defaultAction)
+                        .buttonStyle(.primaryAction()).keyboardShortcut(.defaultAction)
                 }
             }
         }

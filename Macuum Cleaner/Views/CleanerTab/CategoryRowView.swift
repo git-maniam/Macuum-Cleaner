@@ -7,25 +7,33 @@ struct CategoryRowView: View {
 
     private var files: [JunkFile] { model.files(in: category) }
     private var hasResult: Bool { model.result != nil }
-    private var isDimmed: Bool { hasResult && files.isEmpty && model.isEnabled(category) }
+    private var enabled: Bool { model.isEnabled(category) }
+    private var isDimmed: Bool { hasResult && files.isEmpty && enabled }
 
     var body: some View {
-        HStack(spacing: 8) {
-            Toggle("", isOn: Binding(get: { model.isEnabled(category) }, set: { model.setEnabled(category, $0) }))
-                .toggleStyle(.checkbox)
-                .labelsHidden()
-                .disabled(model.isScanning)
-                .accessibilityLabel("Include \(category.displayName) in scan")
+        HStack(spacing: 10) {
+            IconTile(symbol: category.symbol, tint: category.tint)
+                .saturation(enabled ? 1 : 0.2)
             VStack(alignment: .leading, spacing: 1) {
-                Text(category.displayName).font(.body)
+                Text(category.displayName).font(.body).lineLimit(1)
                 detail
             }
-            Spacer(minLength: 0)
-            if model.isScanning && model.pendingCategories.contains(category) { ProgressView().controlSize(.small) }
+            Spacer(minLength: 4)
+            if model.isScanning && model.pendingCategories.contains(category) {
+                ProgressView().controlSize(.small)
+            } else if hasResult, enabled, !files.isEmpty {
+                Text(ByteFormatter.string(from: files.reduce(Int64(0)) { $0 + $1.size }))
+                    .font(.callout.monospacedDigit()).foregroundStyle(.secondary)
+            }
+            Toggle("", isOn: Binding(get: { enabled }, set: { model.setEnabled(category, $0) }))
+                .toggleStyle(.switch).controlSize(.mini).labelsHidden()
+                .disabled(model.isScanning)
+                .accessibilityLabel("Include \(category.displayName) in scan")
         }
+        .padding(.vertical, 3)
         .frame(minHeight: 44)
         .contentShape(Rectangle())
-        .opacity(isDimmed || !model.isEnabled(category) ? 0.5 : 1)
+        .opacity(isDimmed || !enabled ? 0.55 : 1)
         .help(category.summary)
         .accessibilityElement(children: .combine)
     }
@@ -35,10 +43,12 @@ struct CategoryRowView: View {
             Text("\(n.formatted()) found…").font(.caption).foregroundStyle(.secondary)
         } else if let reason = model.result?.skipped[category] {
             Label(reason, systemImage: "lock").font(.caption).foregroundStyle(.orange)
-        } else if hasResult, model.isEnabled(category) {
-            let size = files.reduce(Int64(0)) { $0 + $1.size }
-            Text(files.isEmpty ? "Nothing found" : "\(files.count.formatted()) files · \(ByteFormatter.string(from: size))")
+        } else if hasResult, enabled {
+            Text(files.isEmpty ? "Nothing found" : "\(files.count.formatted()) files")
                 .font(.caption).foregroundStyle(.secondary)
+        } else {
+            Text(category.risk == .safe ? "Safe to remove" : category.risk == .caution ? "Review first" : "Your data — manual review")
+                .font(.caption).foregroundStyle(.tertiary)
         }
     }
 }

@@ -26,6 +26,7 @@
 		BCB4C31566D6C1536E2D0A48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E9C436F19C4753821A07064 /* Localizable.strings */; };
 		C33FEB3162AB60ACBE390399 /* AppManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5AEC44355FF1D62C8AE0F /* AppManagerView.swift */; };
 		C3CCC4FE45BD98D639464138 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CEDA41DA4F75F3618B0F3 /* SettingsView.swift */; };
+		CA489C473374621D331AEB9B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E5F9D9454264E3762B8B5 /* Theme.swift */; };
 		E919B1D353AAC07642CD520E /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */; };
 		FF1C969C16E933306058FED2 /* CleanerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacuumCleanerApp.swift; sourceTree = "<group>"; };
 		CA5185D881D1178CD6B4F160 /* Macuum Cleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Macuum Cleaner.entitlements"; sourceTree = "<group>"; };
 		CF506CDB5A339E028E5206B9 /* MacuumCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MacuumCore; path = Packages/MacuumCore; sourceTree = SOURCE_ROOT; };
+		E48E5F9D9454264E3762B8B5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E6B3864ECAE1E7A0B087946F /* AppListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListView.swift; sourceTree = "<group>"; };
 		EDE5AEC44355FF1D62C8AE0F /* AppManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManagerView.swift; sourceTree = "<group>"; };
 		F68F9F12A47A1E4F8A675BCD /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				5A996C9EB04CD73D178844B6 /* AboutView.swift */,
 				3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */,
 				307CEDA41DA4F75F3618B0F3 /* SettingsView.swift */,
+				E48E5F9D9454264E3762B8B5 /* Theme.swift */,
 				D7E75A59D4812D67C883458D /* AppManagerTab */,
 				D09C12A9044763264469FD97 /* CleanerTab */,
 			);
@@ -254,6 +257,7 @@
 				1D09F99BFB594CD7AA22E750 /* ScanView.swift in Sources */,
 				7C02F417567E6E709635EB92 /* ScheduledScan.swift in Sources */,
 				C3CCC4FE45BD98D639464138 /* SettingsView.swift in Sources */,
+				CA489C473374621D331AEB9B /* Theme.swift in Sources */,
 				4193E03376364824FE199B17 /* UninstallConfirmView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

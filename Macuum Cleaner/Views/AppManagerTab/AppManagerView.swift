@@ -6,26 +6,34 @@ struct AppManagerView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
+            HStack(spacing: 10) {
                 HStack {
                     Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
                     TextField("Search apps…", text: $model.search).textFieldStyle(.plain)
                         .accessibilityLabel("Search apps by name or bundle ID")
+                    if !model.search.isEmpty {
+                        Button { model.search = "" } label: { Image(systemName: "xmark.circle.fill") }
+                            .buttonStyle(.plain).foregroundStyle(.secondary).accessibilityLabel("Clear search")
+                    }
                 }
-                .padding(6).background(.quaternary, in: RoundedRectangle(cornerRadius: 6)).frame(maxWidth: 260)
+                .padding(.horizontal, 10).padding(.vertical, 7)
+                .background(.quaternary.opacity(0.6), in: Capsule()).frame(maxWidth: 300)
                 Spacer()
-                Picker("Sort", selection: $model.sort) {
-                    ForEach(AppSortOrder.menuOrder, id: \.self) { Text($0.title).tag($0) }
-                }.frame(width: 230)
-                Picker("Filter", selection: $model.filter) {
-                    ForEach(AppFilter.allCases) { Text($0.rawValue).tag($0) }
-                }.frame(width: 250)
+                Menu {
+                    Picker("Sort", selection: $model.sort) { ForEach(AppSortOrder.menuOrder, id: \.self) { Text($0.title).tag($0) } }
+                } label: { Label(model.sort.title, systemImage: "arrow.up.arrow.down") }
+                    .menuStyle(.button).fixedSize()
+                Menu {
+                    Picker("Filter", selection: $model.filter) { ForEach(AppFilter.allCases) { Text($0.rawValue).tag($0) } }
+                } label: { Label(model.filter.rawValue, systemImage: "line.3.horizontal.decrease.circle") }
+                    .menuStyle(.button).fixedSize()
             }
-            .padding(10)
+            .padding(12)
             Divider()
-            HSplitView {
-                AppListView(model: model).frame(minWidth: 280, idealWidth: 320, maxWidth: 420)
-                AppDetailPanel(app: model.selectedApp, model: model).frame(minWidth: 380)
+            HStack(spacing: 0) {
+                AppListView(model: model).frame(width: 340)
+                Divider()
+                AppDetailPanel(app: model.selectedApp, model: model).frame(maxWidth: .infinity)
             }
             Divider()
             statusBar
@@ -59,11 +67,12 @@ struct AppManagerView: View {
             Spacer()
             Button("Refresh") { Task { await model.load() } }.disabled(model.isLoading || model.isUninstalling)
             if !model.checkedIDs.isEmpty {
-                Button("Uninstall Selected (\(model.checkedIDs.count))") { model.requestBatchUninstall() }
-                    .disabled(model.isUninstalling)
+                Button { model.requestBatchUninstall() } label: { Label("Uninstall Selected (\(model.checkedIDs.count))", systemImage: "trash.fill") }
+                    .buttonStyle(.primaryAction(.red)).disabled(model.isUninstalling)
             }
         }
-        .padding(10)
+        .padding(.horizontal, 16).padding(.vertical, 10)
+        .background(.regularMaterial)
     }
 }
 
