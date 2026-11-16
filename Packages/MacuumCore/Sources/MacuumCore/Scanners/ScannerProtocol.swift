@@ -25,17 +25,21 @@ public struct ScanContext: Sendable {
     public var now: Date
     public var reporter: ScanReporter
     public var runningBundleIDs: Set<String>
+    /// User opt-in for system-level locations (/Library, /var/log, /tmp). Also needs Full Disk Access.
+    public var scanSystemPaths: Bool
+    public var canScanSystemPaths: Bool { hasFullDiskAccess && scanSystemPaths }
 
     public var library: URL { home.appendingPathComponent("Library") }
 
     public init(home: URL, systemLibrary: URL, tempDirs: [URL], logDirs: [URL], volumesRoot: URL,
                 applicationDirs: [URL], settings: AppSettings = AppSettings(), hasFullDiskAccess: Bool,
                 validator: SafetyValidator, now: Date = Date(), reporter: ScanReporter = ScanReporter(),
-                runningBundleIDs: Set<String> = []) {
+                runningBundleIDs: Set<String> = [], scanSystemPaths: Bool = true) {
         self.home = home; self.systemLibrary = systemLibrary; self.tempDirs = tempDirs; self.logDirs = logDirs
         self.volumesRoot = volumesRoot; self.applicationDirs = applicationDirs; self.settings = settings
         self.hasFullDiskAccess = hasFullDiskAccess; self.validator = validator; self.now = now; self.reporter = reporter
         self.runningBundleIDs = runningBundleIDs
+        self.scanSystemPaths = scanSystemPaths
     }
 
     public static func live(settings: AppSettings = AppSettings()) -> ScanContext {
@@ -50,7 +54,8 @@ public struct ScanContext: Sendable {
             settings: settings,
             hasFullDiskAccess: FullDiskAccess.isGranted(),
             validator: SafetyValidator(exclusions: settings.excludedPaths),
-            runningBundleIDs: Set(NSWorkspace.shared.runningApplications.compactMap(\.bundleIdentifier)))
+            runningBundleIDs: Set(NSWorkspace.shared.runningApplications.compactMap(\.bundleIdentifier)),
+            scanSystemPaths: settings.scanSystemPaths)
     }
 }
 

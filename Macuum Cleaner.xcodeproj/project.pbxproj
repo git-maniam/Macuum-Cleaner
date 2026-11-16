@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12786874028886388215516C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A996C9EB04CD73D178844B6 /* AboutView.swift */; };
 		1D09F99BFB594CD7AA22E750 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28344B9D8F9AD9C499095857 /* ScanView.swift */; };
 		30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */; };
 		4193E03376364824FE199B17 /* UninstallConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70956022FD1F2D42CFEA8B /* UninstallConfirmView.swift */; };
@@ -16,6 +17,7 @@
 		6173D54F8D39E3609B0E4E6F /* MacuumCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1AE7BDAD8AD8D1CDFE17F5 /* MacuumCore */; };
 		6B9AC5E1CA87287D76805A46 /* CleanConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA99BA36CA4EBDF2E45A473 /* CleanConfirmView.swift */; };
 		7B28E79608398C256D157BEB /* AppManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D7204580758D10CDDD59F /* AppManagerViewModel.swift */; };
+		7C02F417567E6E709635EB92 /* ScheduledScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B214CF9890E53E957A7F7A59 /* ScheduledScan.swift */; };
 		84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304ABB3411A5E131FFDD2261 /* AppDelegate.swift */; };
 		99AD6EEEFBF7FC81719DAFA0 /* AppDetailPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC904A8B197B71269D9E76 /* AppDetailPanel.swift */; };
 		9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */; };
@@ -23,6 +25,7 @@
 		AEA7A389128821F0F9D7D1C9 /* AppRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F86D48A5416F5225555E70 /* AppRowView.swift */; };
 		BCB4C31566D6C1536E2D0A48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E9C436F19C4753821A07064 /* Localizable.strings */; };
 		C33FEB3162AB60ACBE390399 /* AppManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5AEC44355FF1D62C8AE0F /* AppManagerView.swift */; };
+		C3CCC4FE45BD98D639464138 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CEDA41DA4F75F3618B0F3 /* SettingsView.swift */; };
 		E919B1D353AAC07642CD520E /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */; };
 		FF1C969C16E933306058FED2 /* CleanerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -32,14 +35,17 @@
 		28344B9D8F9AD9C499095857 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
 		304ABB3411A5E131FFDD2261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		307CEDA41DA4F75F3618B0F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		35EAA9D37F23460BE0B4251A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		401EC19DDE1B349F962DAD67 /* FullDiskAccessSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDiskAccessSheet.swift; sourceTree = "<group>"; };
 		44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
+		5A996C9EB04CD73D178844B6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		69F86D48A5416F5225555E70 /* AppRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowView.swift; sourceTree = "<group>"; };
 		9A0D7204580758D10CDDD59F /* AppManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManagerViewModel.swift; sourceTree = "<group>"; };
 		9E9C436F19C4753821A07064 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerViewModel.swift; sourceTree = "<group>"; };
 		A5DC904A8B197B71269D9E76 /* AppDetailPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailPanel.swift; sourceTree = "<group>"; };
+		B214CF9890E53E957A7F7A59 /* ScheduledScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledScan.swift; sourceTree = "<group>"; };
 		BD70956022FD1F2D42CFEA8B /* UninstallConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UninstallConfirmView.swift; sourceTree = "<group>"; };
 		C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacuumCleanerApp.swift; sourceTree = "<group>"; };
 		CA5185D881D1178CD6B4F160 /* Macuum Cleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Macuum Cleaner.entitlements"; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 			children = (
 				304ABB3411A5E131FFDD2261 /* AppDelegate.swift */,
 				C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */,
+				B214CF9890E53E957A7F7A59 /* ScheduledScan.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -136,7 +143,9 @@
 		DBEB53F7B2DBBEAE7971F5E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A996C9EB04CD73D178844B6 /* AboutView.swift */,
 				3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */,
+				307CEDA41DA4F75F3618B0F3 /* SettingsView.swift */,
 				D7E75A59D4812D67C883458D /* AppManagerTab */,
 				D09C12A9044763264469FD97 /* CleanerTab */,
 			);
@@ -228,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12786874028886388215516C /* AboutView.swift in Sources */,
 				84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */,
 				99AD6EEEFBF7FC81719DAFA0 /* AppDetailPanel.swift in Sources */,
 				53ED412105E522795189C1E8 /* AppListView.swift in Sources */,
@@ -242,6 +252,8 @@
 				9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */,
 				30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */,
 				1D09F99BFB594CD7AA22E750 /* ScanView.swift in Sources */,
+				7C02F417567E6E709635EB92 /* ScheduledScan.swift in Sources */,
+				C3CCC4FE45BD98D639464138 /* SettingsView.swift in Sources */,
 				4193E03376364824FE199B17 /* UninstallConfirmView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

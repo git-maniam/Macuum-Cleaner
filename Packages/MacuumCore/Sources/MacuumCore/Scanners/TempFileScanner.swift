@@ -19,7 +19,7 @@ public struct TempFileScanner: ScannerProtocol {
     public func scan() async throws -> [JunkFile] {
         let hour: TimeInterval = 3_600
         var out: [JunkFile] = []
-        if context.hasFullDiskAccess {
+        if context.canScanSystemPaths {
             for dir in context.tempDirs {
                 out += try ScannerSupport.childFiles(of: dir, category: .tempFiles, context: context, minAge: hour)
             }

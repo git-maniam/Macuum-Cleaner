@@ -38,6 +38,10 @@ struct UninstallSummary: Identifiable {
 }
 
 enum Notifier {
+    static func requestAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { _, _ in }
+    }
+
     static func post(_ text: String) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert]) { granted, _ in

@@ -9,7 +9,7 @@ public struct FontCacheScanner: ScannerProtocol {
     public func scan() async throws -> [JunkFile] {
         var paths = [context.library.appendingPathComponent("Caches/com.apple.FontRegistry"),
                      context.library.appendingPathComponent("Caches/ATS")]
-        if context.hasFullDiskAccess { paths.append(context.systemLibrary.appendingPathComponent("Caches/com.apple.FontRegistry")) }
+        if context.canScanSystemPaths { paths.append(context.systemLibrary.appendingPathComponent("Caches/com.apple.FontRegistry")) }
         var out: [JunkFile] = []
         for p in paths {
             if let f = try ScannerSupport.junkFile(url: p, category: .fontCaches, context: context) { out.append(f) }

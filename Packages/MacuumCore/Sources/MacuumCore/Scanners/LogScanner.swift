@@ -8,7 +8,7 @@ public struct LogScanner: ScannerProtocol {
 
     public func scan() async throws -> [JunkFile] {
         var roots = [context.library.appendingPathComponent("Logs")]
-        if context.hasFullDiskAccess {
+        if context.canScanSystemPaths {
             roots.append(context.systemLibrary.appendingPathComponent("Logs"))
             roots.append(contentsOf: context.logDirs)
         }

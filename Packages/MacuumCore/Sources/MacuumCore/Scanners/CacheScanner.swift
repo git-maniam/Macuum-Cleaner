@@ -13,6 +13,7 @@ public struct CacheScanner: ScannerProtocol {
     public func scan() async throws -> [JunkFile] {
         let root: URL
         if categoryID == .systemCaches {
+            guard context.scanSystemPaths else { return [] }
             guard context.hasFullDiskAccess else { throw ScannerError.needsFullDiskAccess }
             root = context.systemLibrary.appendingPathComponent("Caches")
         } else {

@@ -10,6 +10,8 @@ struct MainWindowView: View {
     @State private var selection: Tab = .cleaner
     @State private var cleaner = CleanerViewModel()
     @State private var appManager = AppManagerViewModel()
+    @State private var showSettings = false
+    @State private var showAbout = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -26,5 +28,15 @@ struct MainWindowView: View {
             case .appManager: AppManagerView(model: appManager)
             }
         }
+        .toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
+                    .help("Settings").accessibilityLabel("Settings")
+                Button { showAbout = true } label: { Label("About", systemImage: "questionmark.circle") }
+                    .help("About Macuum Cleaner").accessibilityLabel("About Macuum Cleaner")
+            }
+        }
+        .sheet(isPresented: $showSettings) { SettingsView(model: cleaner, appManager: appManager) }
+        .sheet(isPresented: $showAbout) { AboutView() }
     }
 }
