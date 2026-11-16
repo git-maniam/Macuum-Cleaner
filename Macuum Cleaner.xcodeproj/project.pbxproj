@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */; };
+		46AB41444F6F46D95AFEA8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35EAA9D37F23460BE0B4251A /* Assets.xcassets */; };
+		6173D54F8D39E3609B0E4E6F /* MacuumCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1AE7BDAD8AD8D1CDFE17F5 /* MacuumCore */; };
+		84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304ABB3411A5E131FFDD2261 /* AppDelegate.swift */; };
+		9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */; };
+		BCB4C31566D6C1536E2D0A48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E9C436F19C4753821A07064 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		162552C9484C08631C328D40 /* Macuum Cleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macuum Cleaner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
+		304ABB3411A5E131FFDD2261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35EAA9D37F23460BE0B4251A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E9C436F19C4753821A07064 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacuumCleanerApp.swift; sourceTree = "<group>"; };
+		CA5185D881D1178CD6B4F160 /* Macuum Cleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Macuum Cleaner.entitlements"; sourceTree = "<group>"; };
+		CF506CDB5A339E028E5206B9 /* MacuumCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MacuumCore; path = Packages/MacuumCore; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E260359A37C6E59991CDDB26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6173D54F8D39E3609B0E4E6F /* MacuumCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2601D2401161760E9ACD66D3 = {
+			isa = PBXGroup;
+			children = (
+				6EF7F3760349F3488E9E58D6 /* Macuum Cleaner */,
+				6DA94A2ED0E758ACB557C7B2 /* Packages */,
+				7881E01DF6DB19FCEDF6AD53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		489E077BFBABF94B7F3709E4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				304ABB3411A5E131FFDD2261 /* AppDelegate.swift */,
+				C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6DA94A2ED0E758ACB557C7B2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				CF506CDB5A339E028E5206B9 /* MacuumCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		6EF7F3760349F3488E9E58D6 /* Macuum Cleaner */ = {
+			isa = PBXGroup;
+			children = (
+				CA5185D881D1178CD6B4F160 /* Macuum Cleaner.entitlements */,
+				489E077BFBABF94B7F3709E4 /* App */,
+				EDEDFA923B640D14CB39253A /* Resources */,
+				DBEB53F7B2DBBEAE7971F5E5 /* Views */,
+			);
+			path = "Macuum Cleaner";
+			sourceTree = "<group>";
+		};
+		7881E01DF6DB19FCEDF6AD53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				162552C9484C08631C328D40 /* Macuum Cleaner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBEB53F7B2DBBEAE7971F5E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EDEDFA923B640D14CB39253A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35EAA9D37F23460BE0B4251A /* Assets.xcassets */,
+				9E9C436F19C4753821A07064 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8601D348CBDA2C13B44431A /* Macuum Cleaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6252C6154862F7CDEC2C0A22 /* Build configuration list for PBXNativeTarget "Macuum Cleaner" */;
+			buildPhases = (
+				8CF58FB8DA64F0984F7CA44B /* Sources */,
+				8040A6E7EC51FEE996C6219C /* Resources */,
+				E260359A37C6E59991CDDB26 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Macuum Cleaner";
+			packageProductDependencies = (
+				0B1AE7BDAD8AD8D1CDFE17F5 /* MacuumCore */,
+			);
+			productName = "Macuum Cleaner";
+			productReference = 162552C9484C08631C328D40 /* Macuum Cleaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDE4007ED5AAF803938A5212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C8601D348CBDA2C13B44431A = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8FF76DA932DAC0FA3A8A781B /* Build configuration list for PBXProject "Macuum Cleaner" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2601D2401161760E9ACD66D3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FC52A160F37AE85D9093A02E /* XCLocalSwiftPackageReference "Packages/MacuumCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7881E01DF6DB19FCEDF6AD53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8601D348CBDA2C13B44431A /* Macuum Cleaner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8040A6E7EC51FEE996C6219C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46AB41444F6F46D95AFEA8B9 /* Assets.xcassets in Resources */,
+				BCB4C31566D6C1536E2D0A48 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CF58FB8DA64F0984F7CA44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */,
+				9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */,
+				30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		041BEAC06437D03F02B04E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Macuum Cleaner/Macuum Cleaner.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Macuum Cleaner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macuum.cleaner;
+				PRODUCT_NAME = "Macuum Cleaner";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1D735F175988991E21BAFE79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Macuum Cleaner/Macuum Cleaner.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Macuum Cleaner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macuum.cleaner;
+				PRODUCT_NAME = "Macuum Cleaner";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		34FC9E5D6A387FF0FCE5CBED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		3F6F9E34DB9AE43881C8D8C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6252C6154862F7CDEC2C0A22 /* Build configuration list for PBXNativeTarget "Macuum Cleaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041BEAC06437D03F02B04E8C /* Debug */,
+				1D735F175988991E21BAFE79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8FF76DA932DAC0FA3A8A781B /* Build configuration list for PBXProject "Macuum Cleaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6F9E34DB9AE43881C8D8C0 /* Debug */,
+				34FC9E5D6A387FF0FCE5CBED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FC52A160F37AE85D9093A02E /* XCLocalSwiftPackageReference "Packages/MacuumCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/MacuumCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B1AE7BDAD8AD8D1CDFE17F5 /* MacuumCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MacuumCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DDE4007ED5AAF803938A5212 /* Project object */;
+}
