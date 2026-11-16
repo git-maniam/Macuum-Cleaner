@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D09F99BFB594CD7AA22E750 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28344B9D8F9AD9C499095857 /* ScanView.swift */; };
 		30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */; };
 		46AB41444F6F46D95AFEA8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35EAA9D37F23460BE0B4251A /* Assets.xcassets */; };
+		50396C0A926A5A81A1AA0F1C /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F9F12A47A1E4F8A675BCD /* FileListView.swift */; };
 		6173D54F8D39E3609B0E4E6F /* MacuumCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1AE7BDAD8AD8D1CDFE17F5 /* MacuumCore */; };
+		6B9AC5E1CA87287D76805A46 /* CleanConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA99BA36CA4EBDF2E45A473 /* CleanConfirmView.swift */; };
 		84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304ABB3411A5E131FFDD2261 /* AppDelegate.swift */; };
 		9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */; };
+		9FE109EB5A57314074850FDD /* FullDiskAccessSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EC19DDE1B349F962DAD67 /* FullDiskAccessSheet.swift */; };
 		BCB4C31566D6C1536E2D0A48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E9C436F19C4753821A07064 /* Localizable.strings */; };
+		E919B1D353AAC07642CD520E /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */; };
+		FF1C969C16E933306058FED2 /* CleanerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		162552C9484C08631C328D40 /* Macuum Cleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macuum Cleaner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28344B9D8F9AD9C499095857 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
 		304ABB3411A5E131FFDD2261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35EAA9D37F23460BE0B4251A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		401EC19DDE1B349F962DAD67 /* FullDiskAccessSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDiskAccessSheet.swift; sourceTree = "<group>"; };
+		44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
 		9E9C436F19C4753821A07064 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerViewModel.swift; sourceTree = "<group>"; };
 		C952D12894D885A4B87D39C5 /* MacuumCleanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacuumCleanerApp.swift; sourceTree = "<group>"; };
 		CA5185D881D1178CD6B4F160 /* Macuum Cleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Macuum Cleaner.entitlements"; sourceTree = "<group>"; };
 		CF506CDB5A339E028E5206B9 /* MacuumCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MacuumCore; path = Packages/MacuumCore; sourceTree = SOURCE_ROOT; };
+		F68F9F12A47A1E4F8A675BCD /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
+		FCA99BA36CA4EBDF2E45A473 /* CleanConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanConfirmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +95,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D09C12A9044763264469FD97 /* CleanerTab */ = {
+			isa = PBXGroup;
+			children = (
+				44C75A8203517C8B9CCABB02 /* CategoryRowView.swift */,
+				FCA99BA36CA4EBDF2E45A473 /* CleanConfirmView.swift */,
+				A37CC5946E72D5102F8A4E63 /* CleanerViewModel.swift */,
+				F68F9F12A47A1E4F8A675BCD /* FileListView.swift */,
+				401EC19DDE1B349F962DAD67 /* FullDiskAccessSheet.swift */,
+				28344B9D8F9AD9C499095857 /* ScanView.swift */,
+			);
+			path = CleanerTab;
+			sourceTree = "<group>";
+		};
 		DBEB53F7B2DBBEAE7971F5E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3048CCCD5BACCB1762EEB9A5 /* MainWindowView.swift */,
+				D09C12A9044763264469FD97 /* CleanerTab */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,8 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BEC04C1C5DDD8F67182113 /* AppDelegate.swift in Sources */,
+				E919B1D353AAC07642CD520E /* CategoryRowView.swift in Sources */,
+				6B9AC5E1CA87287D76805A46 /* CleanConfirmView.swift in Sources */,
+				FF1C969C16E933306058FED2 /* CleanerViewModel.swift in Sources */,
+				50396C0A926A5A81A1AA0F1C /* FileListView.swift in Sources */,
+				9FE109EB5A57314074850FDD /* FullDiskAccessSheet.swift in Sources */,
 				9B53DD82BB6F878E9D9055F8 /* MacuumCleanerApp.swift in Sources */,
 				30119B039779F9AF0A3533F0 /* MainWindowView.swift in Sources */,
+				1D09F99BFB594CD7AA22E750 /* ScanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
