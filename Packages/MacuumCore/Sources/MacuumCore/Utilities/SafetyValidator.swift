@@ -43,13 +43,8 @@ public struct SafetyValidator: Sendable {
         ])
     }
 
-    public static let liveRunningAppPaths: @Sendable () -> Set<String> = {
-        #if canImport(AppKit)
-        Set(NSWorkspace.shared.runningApplications.compactMap { $0.bundleURL.map { normalize($0.path) } })
-        #else
-        []
-        #endif
-    }
+    /// Running-app lookup is expensive (~0.5 s per NSWorkspace query), so it is cached for a few seconds.
+    public static let liveRunningAppPaths: @Sendable () -> Set<String> = { RunningAppsCache.shared.paths() }
 
     public func validate(_ url: URL) -> SafetyVerdict {
         guard url.isFileURL, url.path.hasPrefix("/") else { return .blocked(reason: "not an absolute file path") }
@@ -110,5 +105,23 @@ public struct SafetyValidator: Sendable {
             if comp == Substring(ownName) || comp.hasPrefix(ownBundleIdentifier) { return true }
         }
         return false
+    }
+}
+
+final class RunningAppsCache: @unchecked Sendable {
+    static let shared = RunningAppsCache()
+    private let lock = NSLock()
+    private var cached: Set<String> = []
+    private var fetchedAt = Date.distantPast
+    private let ttl: TimeInterval = 5
+
+    func paths() -> Set<String> {
+        lock.lock(); defer { lock.unlock() }
+        if Date().timeIntervalSince(fetchedAt) < ttl { return cached }
+        #if canImport(AppKit)
+        cached = Set(NSWorkspace.shared.runningApplications.compactMap { $0.bundleURL.map { SafetyValidator.normalize($0.path) } })
+        #endif
+        fetchedAt = Date()
+        return cached
     }
 }

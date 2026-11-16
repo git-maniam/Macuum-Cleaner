@@ -15,3 +15,15 @@ final class LiveScanTests: XCTestCase {
         XCTAssertLessThan(secs, 30)
     }
 }
+
+final class LiveTimingTests: XCTestCase {
+    func testPerScannerTiming() async throws {
+        try XCTSkipUnless(ProcessInfo.processInfo.environment["MACUUM_TIMING"] == "1")
+        let ctx = ScanContext.live()
+        for s in ScannerRegistry.allScanners(context: ctx) where s.categoryID != .duplicates && (ProcessInfo.processInfo.environment["MACUUM_ONLY"].map { $0 == s.categoryID.rawValue } ?? true) {
+            let t = Date()
+            let n = (try? await s.scan().count) ?? -1
+            FileHandle.standardError.write(Data("TIMING \(s.categoryID.rawValue) \(String(format: "%.1f", Date().timeIntervalSince(t)))s n=\(n)\n".utf8))
+        }
+    }
+}
