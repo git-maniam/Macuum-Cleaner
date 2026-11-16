@@ -9,6 +9,7 @@ struct MainWindowView: View {
 
     @State private var selection: Tab = .cleaner
     @State private var cleaner = CleanerViewModel()
+    @State private var appManager = AppManagerViewModel()
 
     var body: some View {
         VStack(spacing: 0) {
@@ -22,7 +23,7 @@ struct MainWindowView: View {
             Divider()
             switch selection {
             case .cleaner: ScanView(model: cleaner)
-            case .appManager: Text("App Manager (coming in M5)").frame(maxWidth: .infinity, maxHeight: .infinity)
+            case .appManager: AppManagerView(model: appManager)
             }
         }
     }
