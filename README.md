@@ -4,6 +4,10 @@
 
 A lightweight, safe and transparent disk cleaner for macOS. It scans for well-known kinds of junk, shows you exactly what would be removed, and never deletes anything without your approval. It is a disk cleaner, not a "speed booster": no background daemons, no login items, no always-on processes (unless you turn on the weekly scan).
 
+## Status
+
+**Pre-release.** The app is feature-complete for v1.0 (Cleaner, App Manager, Settings, weekly scheduled scan) and builds and passes its tests, but no signed/notarized `.dmg` has been published yet — that is waiting on Apple Developer ID enrollment. Language-file cleaning is planned for v1.1. See [Macuum-Cleaner-Spec.md](Macuum-Cleaner-Spec.md) (§16 deviations, §17 restart checklist) for details and next steps.
+
 ## Download
 
 Releases are published on the GitHub Releases page as `Macuum-Cleaner-vX.Y.Z.dmg` (Developer ID signed and notarized).
@@ -15,7 +19,7 @@ Releases are published on the GitHub Releases page as `Macuum-Cleaner-vX.Y.Z.dmg
 
 ## Features
 
-**Cleaner** — 23 categories, scanned in parallel in a few seconds:
+**Cleaner** — 23 categories (Language Files arrives in v1.1), scanned in parallel in a few seconds:
 system and app caches, logs, temporary files, Trash, browser data, app leftovers, developer caches, iPhone/iPad backups, orphaned preferences, download junk, duplicate files, `.DS_Store` files, font caches, Quick Look thumbnails, Mail downloads, package-manager caches, notification history, Spotlight files on external drives, iCloud conflict copies, old screenshots, VM/Docker data and local Time Machine snapshots.
 Everything is moved to the Trash by default. Risky categories (backups, duplicates, downloads, VMs) are never pre-selected.
 
