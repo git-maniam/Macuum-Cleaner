@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadType</key><string>Configuration</string>
+    <key>PayloadVersion</key><integer>1</integer>
+    <key>PayloadIdentifier</key><string>com.macuum.cleaner.pppc</string>
+    <key>PayloadUUID</key><string>EE4C5251-9844-4F9C-B9BB-B5174F84DB9B</string>
+    <key>PayloadDisplayName</key><string>Macuum Cleaner – Full Disk Access</string>
+    <key>PayloadDescription</key><string>Grants Macuum Cleaner Full Disk Access so it can scan protected locations.</string>
+    <key>PayloadOrganization</key><string>Macuum Cleaner</string>
+    <key>PayloadScope</key><string>System</string>
+    <key>PayloadRemovalDisallowed</key><false/>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key><string>com.apple.TCC.configuration-profile-policy</string>
+            <key>PayloadVersion</key><integer>1</integer>
+            <key>PayloadIdentifier</key><string>com.macuum.cleaner.pppc.policy</string>
+            <key>PayloadUUID</key><string>779FDD92-2317-4D5F-B6B5-CC4F73AB9340</string>
+            <key>PayloadDisplayName</key><string>Privacy Preferences Policy Control</string>
+            <key>Services</key>
+            <dict>
+                <key>SystemPolicyAllFiles</key>
+                <array>
+                    <dict>
+                        <key>Identifier</key><string>com.macuum.cleaner</string>
+                        <key>IdentifierType</key><string>bundleID</string>
+                        <key>CodeRequirement</key><string>anchor apple generic and identifier "com.macuum.cleaner" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = XU8XWLY8Q9)</string>
+                        <key>Authorization</key><string>Allow</string>
+                        <key>Comment</key><string>Macuum Cleaner (Developer ID, Team XU8XWLY8Q9)</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

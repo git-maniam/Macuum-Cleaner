@@ -17,6 +17,7 @@ struct ScanView: View {
         .sheet(isPresented: $model.showConfirm) { CleanConfirmView(model: model) }
         .sheet(isPresented: $model.showFDASheet) { FullDiskAccessSheet { model.fdaSheetDismissed() } }
         .sheet(item: $model.cleanSummary) { summary in CleanSummaryView(summary: summary, model: model) }
+        .task { model.presentFullDiskAccessWelcomeIfNeeded() }
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["MACUUM_AUTOSCAN"] == "1" { model.startScan() } }
         #endif

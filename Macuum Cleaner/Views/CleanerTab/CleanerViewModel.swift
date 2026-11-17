@@ -42,6 +42,7 @@ final class CleanerViewModel {
     private let store: SettingsStore
     private let history: ScanHistory
     private var scanTask: Task<Void, Never>?
+    private var scanAfterFDASheet = false
     private static let fdaPromptKey = "MacuumCleaner.fdaPromptShown"
 
     init(store: SettingsStore = SettingsStore(), history: ScanHistory = ScanHistory()) {
@@ -76,16 +77,25 @@ final class CleanerViewModel {
     func startScan() {
         guard !isScanning else { return }
         if !hasFullDiskAccess && !UserDefaults.standard.bool(forKey: Self.fdaPromptKey) {
+            scanAfterFDASheet = true
             showFDASheet = true
             return
         }
         beginScan()
     }
 
+    /// Shown once, the first time the app opens without Full Disk Access.
+    func presentFullDiskAccessWelcomeIfNeeded() {
+        guard !hasFullDiskAccess, !UserDefaults.standard.bool(forKey: Self.fdaPromptKey) else { return }
+        scanAfterFDASheet = false
+        showFDASheet = true
+    }
+
     func fdaSheetDismissed() {
         UserDefaults.standard.set(true, forKey: Self.fdaPromptKey)
         showFDASheet = false
-        beginScan()
+        if scanAfterFDASheet { beginScan() }
+        scanAfterFDASheet = false
     }
 
     private func beginScan() {

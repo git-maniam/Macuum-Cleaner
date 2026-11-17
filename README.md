@@ -23,6 +23,12 @@ To upgrade later: `brew upgrade --cask macuum-cleaner`. To remove it along with 
 - macOS 14 Sonoma or later (Apple Silicon and Intel)
 - Full Disk Access is optional; it lets the app scan protected locations (`/Library`, system logs, the Trash, iPhone backups).
 
+## Full Disk Access
+
+macOS does not let any app grant itself Full Disk Access, and neither Homebrew nor an installer can do it for you. On first launch Macuum Cleaner shows a short guide: it opens the right System Settings pane, gives you the app icon to drag into the list, and offers a **Relaunch** button because macOS applies the permission to newly started apps. It is optional; without it the protected locations are skipped.
+
+**Managed Macs:** IT admins can pre-approve it with the MDM profile in [`packaging/mdm/`](packaging/mdm/) (a PPPC profile for `com.macuum.cleaner`).
+
 ## Features
 
 **Cleaner** — 23 categories (Language Files arrives in v1.1), scanned in parallel in a few seconds:
