@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Build, sign, notarize and package Macuum Cleaner as a .dmg.
+# Build, sign, notarize (app, then .dmg), staple both, and package Macuum Cleaner as a .dmg.
 # Requires: Xcode, xcodegen, create-dmg (brew install create-dmg), a "Developer ID Application" certificate,
 # and a notarytool keychain profile:  xcrun notarytool store-credentials macuum-notary
 # Usage: scripts/release.sh 1.0.0 "Developer ID Application: Your Name (TEAMID)" [notary-profile]
@@ -13,7 +13,7 @@ BUILD="$ROOT/build/release"
 APP="$BUILD/export/Macuum Cleaner.app"
 DMG="$ROOT/build/Macuum-Cleaner-v$VERSION.dmg"
 
-rm -rf "$BUILD"; mkdir -p "$BUILD"
+rm -rf "$BUILD" "$DMG"; mkdir -p "$BUILD"
 cd "$ROOT"
 xcodegen generate
 
@@ -35,6 +35,13 @@ xcodebuild -exportArchive -archivePath "$BUILD/MacuumCleaner.xcarchive" -exportP
 
 lipo -info "$APP/Contents/MacOS/Macuum Cleaner"
 codesign --verify --deep --strict --verbose=2 "$APP"
+
+# Notarize and staple the app itself first, so the copy users drag out of the .dmg also works offline.
+ditto -c -k --keepParent "$APP" "$BUILD/MacuumCleaner.zip"
+xcrun notarytool submit "$BUILD/MacuumCleaner.zip" --keychain-profile "$PROFILE" --wait
+xcrun stapler staple "$APP"
+xcrun stapler validate "$APP"
+spctl --assess --type execute -v "$APP"
 
 create-dmg --volname "Macuum Cleaner" --app-drop-link 480 170 --icon "Macuum Cleaner.app" 160 170 \
   --window-size 640 360 "$DMG" "$APP"

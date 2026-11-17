@@ -4,13 +4,18 @@
 
 A lightweight, safe and transparent disk cleaner for macOS. It scans for well-known kinds of junk, shows you exactly what would be removed, and never deletes anything without your approval. It is a disk cleaner, not a "speed booster": no background daemons, no login items, no always-on processes (unless you turn on the weekly scan).
 
-## Status
+## Install
 
-**Pre-release.** The app is feature-complete for v1.0 (Cleaner, App Manager, Settings, weekly scheduled scan) and builds and passes its tests, but no signed/notarized `.dmg` has been published yet — that is waiting on Apple Developer ID enrollment. Language-file cleaning is planned for v1.1. See [Macuum-Cleaner-Spec.md](Macuum-Cleaner-Spec.md) (§16 deviations, §17 restart checklist) for details and next steps.
+**Homebrew** (recommended):
 
-## Download
+```sh
+brew tap git-maniam/tap
+brew install --cask macuum-cleaner
+```
 
-Releases are published on the GitHub Releases page as `Macuum-Cleaner-vX.Y.Z.dmg` (Developer ID signed and notarized).
+To upgrade later: `brew upgrade --cask macuum-cleaner`. To remove it along with its settings: `brew uninstall --cask --zap macuum-cleaner`.
+
+**Manual download:** get `Macuum-Cleaner-vX.Y.Z.dmg` from the [Releases page](https://github.com/git-maniam/Macuum-Cleaner/releases), open it, and drag **Macuum Cleaner** to Applications. Releases are signed with a Developer ID certificate and notarized by Apple, so macOS opens them without warnings.
 
 ## Requirements
 
